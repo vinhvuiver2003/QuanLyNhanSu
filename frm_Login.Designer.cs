@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -48,9 +49,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("FSP DEMO - Prxm Nv Cnd Smbld", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(157, 88);
+            this.label1.Location = new System.Drawing.Point(152, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 102);
+            this.label1.Size = new System.Drawing.Size(229, 63);
             this.label1.TabIndex = 2;
             this.label1.Text = "WELCOME";
             // 
@@ -75,6 +76,7 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtPass.Location = new System.Drawing.Point(89, 321);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(345, 34);
@@ -116,6 +118,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.DarkOrange;
             this.panel2.Controls.Add(this.cb_showPass);
             this.panel2.Controls.Add(this.btn_Signin);
             this.panel2.Controls.Add(this.txtPass);
@@ -162,7 +165,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

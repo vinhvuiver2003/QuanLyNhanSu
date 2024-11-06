@@ -1,11 +1,9 @@
-﻿using DevExpress.Utils.MVVM.Services;
-using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.ColorPick.Picker;
-using DevExpress.XtraEditors.Controls;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -70,6 +68,39 @@ namespace QuanLyNhanVien
                 MessageBox.Show("Chưa nhập mật khẩu", "Thông báo");
                 txtPass.Focus();
                 return;
+            }
+            string query = "SELECT * FROM tb_account WHERE ID_nhanvien =@user AND password=@pass";
+            try
+            {
+                KetNoi connection = new KetNoi();
+                
+                SqlParameter[] parameters = new SqlParameter[] {
+                new SqlParameter("@user",SqlDbType.VarChar){Value=txtUser.Text.Trim()},
+                new SqlParameter("@pass",SqlDbType.VarChar){Value = txtPass.Text.Trim()}
+                };
+               
+               DataTable dt = connection.ExscutedQuerry(query, parameters);
+                if (dt.Rows.Count >= 1)
+                {
+                    foreach (DataRow dr in dt.Rows) {
+                        if (dr["permission"].ToString().Equals("admin"))
+                        {
+                            frm_admin frm_Admin = new frm_admin();
+                            frm_Admin.ShowDialog();
+                            this.Hide();
+                            break;
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nhập sai tên tài khoản hoặc mật khẩu");
+                }
+
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Lỗi đăng nhập");
             }
 
         }

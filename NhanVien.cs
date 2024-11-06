@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyNhanVien
 {
-    public partial class frm_nhanvien : Form
+    public partial class NhanVien : UserControl
     {
-        public frm_nhanvien()
+        public NhanVien()
         {
             InitializeComponent();
         }
