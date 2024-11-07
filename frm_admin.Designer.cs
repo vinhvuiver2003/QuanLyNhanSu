@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_admin));
             this.sideBar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuButton = new System.Windows.Forms.PictureBox();
             this.btn_qlnv = new System.Windows.Forms.Button();
@@ -41,10 +42,12 @@
             this.btn_qlluong = new System.Windows.Forms.Button();
             this.btn_thongke = new System.Windows.Forms.Button();
             this.siteBarTimer = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.sideBar.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // sideBar
@@ -62,7 +65,7 @@
             this.sideBar.MaximumSize = new System.Drawing.Size(320, 1033);
             this.sideBar.MinimumSize = new System.Drawing.Size(83, 1033);
             this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(320, 1033);
+            this.sideBar.Size = new System.Drawing.Size(83, 1033);
             this.sideBar.TabIndex = 0;
             // 
             // panel4
@@ -74,6 +77,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(317, 146);
             this.panel4.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(103, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Admin";
             // 
             // label1
             // 
@@ -212,29 +226,37 @@
             this.siteBarTimer.Interval = 10;
             this.siteBarTimer.Tick += new System.EventHandler(this.siteBarTimer_Tick);
             // 
-            // label2
+            // panel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(103, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Admin";
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(83, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1819, 1033);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(27, 22);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1384, 491);
+            this.panel2.TabIndex = 0;
             // 
             // frm_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.sideBar);
             this.Name = "frm_admin";
             this.Text = "frm_admin";
+            this.Load += new System.EventHandler(this.frm_admin_Load);
             this.sideBar.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuButton)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -253,5 +275,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_chamcong;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

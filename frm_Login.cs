@@ -87,7 +87,7 @@ namespace QuanLyNhanVien
                         {
                             frm_admin frm_Admin = new frm_admin();
                             frm_Admin.ShowDialog();
-                            this.Hide();
+                            this.Close();
                             break;
                         }
                         

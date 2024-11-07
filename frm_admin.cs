@@ -13,6 +13,7 @@ namespace QuanLyNhanVien
 {
     public partial class frm_admin : Form
     {
+        frm_employeeList form2;
         public frm_admin()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace QuanLyNhanVien
         {
             if (sideBarExpand) {
                 sideBar.Width -= 10;
+               
                 if (sideBar.Width == sideBar.MinimumSize.Width)
                 { 
                 sideBarExpand = false;
@@ -33,6 +35,7 @@ namespace QuanLyNhanVien
             else
             {
                 sideBar.Width += 10;
+               
                 if (sideBar.Width == sideBar.MaximumSize.Width)
                 {
                     sideBarExpand = true;
@@ -74,11 +77,19 @@ namespace QuanLyNhanVien
         private void btn_qlnv_Click(object sender, EventArgs e)
         {
             ActButton(sender);
+            form2 = new frm_employeeList();
+            form2.TopLevel = false;
+            form2.FormBorderStyle = FormBorderStyle.None; // Không hiển thị viền của Form2
+            form2.Dock = DockStyle.Fill;
+            panel2.Controls.Add(form2);
+            form2.Show();
+
         }
 
         private void btn_qlcv_Click(object sender, EventArgs e)
         {
             ActButton(sender);
+            form2.Close();
 
         }
 
@@ -107,12 +118,14 @@ namespace QuanLyNhanVien
         {
             GraphicsPath path = new GraphicsPath();
             path.AddEllipse(0, 0, menuButton.Width, menuButton.Height);
-
-            // Cắt hình ảnh theo đường path đã tạo
             menuButton.Region = new Region(path);
 
 
         }
-        
+
+        private void frm_admin_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
